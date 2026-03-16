@@ -12,7 +12,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray-100/50">
         <div className="max-w-2xl mx-auto px-6 py-5 flex justify-between items-center">
           <h1 className="text-2xl">
-            Test qode Full Stack - Trương Quốc Bảo
+            Test qode Full Stack - Truong Quoc Bao
           </h1>
           <div className="w-12 h-12">
             <img
@@ -31,7 +31,7 @@ export default function Home() {
         <section>
           <div className="flex items-center gap-4 mb-10">
             <h2 className="text-2xl font-bold tracking-tight">
-              Khoảng khắc gần đây
+              Recent Stories
             </h2>
             <div className="h-px flex-1 bg-gray-100" />
           </div>

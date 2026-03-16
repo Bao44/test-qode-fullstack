@@ -22,7 +22,7 @@ export default function UploadForm({ onUploadSuccess }: any) {
       setFile(null);
       onUploadSuccess();
     } catch (error) {
-      alert("Tải lên thất bại, vui lòng thử lại.");
+      alert("Upload failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -41,7 +41,7 @@ export default function UploadForm({ onUploadSuccess }: any) {
           <Upload size={24} />
         </div>
         <p className="text-gray-500 font-medium text-center">
-          Nhấp để tải lên hoặc kéo thả hình ảnh vào đây
+          Click to upload or drag and drop an image here
         </p>
       </div>
 
@@ -64,7 +64,7 @@ export default function UploadForm({ onUploadSuccess }: any) {
 
       <input
         type="text"
-        placeholder="Viết chú thích cho bức ảnh..."
+        placeholder="Write a caption for the photo..."
         value={caption}
         onChange={(e) => setCaption(e.target.value)}
         className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-blue-500 transition-all outline-none text-gray-700 shadow-inner"
@@ -74,7 +74,7 @@ export default function UploadForm({ onUploadSuccess }: any) {
         disabled={loading || !file}
         className="w-full bg-blue-600 disabled:bg-gray-300 text-white py-4 rounded-2xl hover:bg-blue-700 transition-all font-bold tracking-wide shadow-xl shadow-blue-100 active:scale-[0.98] cursor-pointer"
       >
-        {loading ? "ĐANG XỬ LÝ..." : "ĐĂNG BÀI VIẾT"}
+        {loading ? "UPLOADING..." : "POST PHOTO"}
       </button>
     </form>
   );

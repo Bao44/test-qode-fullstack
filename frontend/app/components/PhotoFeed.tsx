@@ -34,14 +34,14 @@ export default function PhotoFeed({
   }, [refreshTrigger]);
 
   const handleDeletePhoto = async (id: string, url: string) => {
-    if (!confirm("Bạn có chắc chắn muốn xóa ảnh này?")) return;
+    if (!confirm("Do you want to delete this photo?")) return;
     const fileName = url.split("/").pop();
     await deletePhoto(id, fileName!);
     fetchPhotos();
   };
 
   const handleDeleteComment = async (id: number) => {
-    if (!confirm("Xóa bình luận này?")) return;
+    if (!confirm("Do you want to delete this comment?")) return;
     await deleteComment(id);
     fetchPhotos();
   };
@@ -71,13 +71,13 @@ export default function PhotoFeed({
               <TrashIcon size={20} />
             </button>
             <div className="absolute bottom-4 left-4 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] text-white">
-              Đăng lúc: {formatDate(photo.created_at)}
+              Posted at: {formatDate(photo.created_at)}
             </div>
           </div>
 
           <div className="p-6">
             <p className="text-gray-800 font-semibold text-lg mb-4 leading-relaxed">
-              {photo.caption || "Khoảnh khắc không tên"}
+              {photo.caption || "Recent moment"}
             </p>
 
             {/* Comments Area */}
@@ -85,7 +85,7 @@ export default function PhotoFeed({
               <div className="flex items-center gap-2 text-gray-400 mb-2">
                 <MessageSquare size={16} />
                 <span className="text-sm font-medium">
-                  Bình luận ({photo.comments?.length || 0})
+                  Comments ({photo.comments?.length || 0})
                 </span>
               </div>
 
@@ -120,14 +120,14 @@ export default function PhotoFeed({
                     [photo.id]: e.target.value,
                   })
                 }
-                placeholder="Chia sẻ cảm nghĩ của bạn..."
+                placeholder="Share your thoughts..."
                 className="flex-1 bg-transparent px-3 py-2 text-sm outline-none"
               />
               <button
                 onClick={() => handleAddComment(photo.id)}
                 className="bg-blue-600 text-white px-5 py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-100 cursor-pointer"
               >
-                Gửi
+                Send
               </button>
             </div>
           </div>
