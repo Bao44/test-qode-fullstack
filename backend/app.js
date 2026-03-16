@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 const corsOptions = {
   // Add your allowed origins here
-  origin: "*",
+  origin: ['http://localhost:3000', 'https://test-qode-fullstack.vercel.app/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'], // Add OPTIONS
   credentials: true,
 };
