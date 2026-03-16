@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 const corsOptions = {
   // Add your allowed origins here
-  origin: ['http://localhost:3000'],
+  origin: "*",
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'], // Add OPTIONS
   credentials: true,
 };
